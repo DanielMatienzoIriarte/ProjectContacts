@@ -1,0 +1,18 @@
+<resources>
+    <string name="app_name">Project Contacts</string>
+    <string name="form_fullName">Nombre Completo</string>
+    <string name="form_birthDate">Fecha de Nacimiento</string>
+    <string name="form_phone">Telefono</string>
+    <string name="form_email">e-mail</string>
+    <string name="form_contactDesc">Descripcion</string>
+    <string name="form_button_next">Siguiente</string>
+    <string name="form_button_editData">Editar Datos</string>
+
+    <!-- Intent params -->
+    <string name="intent_fullName">fullName</string>
+    <string name="intent_birthDate">birthDate</string>
+    <string name="intent_phone">phone</string>
+    <string name="intent_email">email</string>
+    <string name="intent_details">details</string>
+
+</resources>

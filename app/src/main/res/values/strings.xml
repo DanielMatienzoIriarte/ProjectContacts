@@ -1,0 +1,21 @@
+<resources>
+    <string name="app_name">Project Contacts</string>
+    <string name="form_fullName">Full Name</string>
+    <string name="form_birthDate">Birth Date</string>
+    <string name="form_phone">Phone</string>
+    <string name="form_email">e-mail</string>
+    <string name="form_contactDesc">Description</string>
+    <string name="form_button_next">Next</string>
+    <string name="form_button_editData">Edit Data</string>
+
+    <!-- Intent params -->
+    <string name="intent_fullName">fullName</string>
+    <string name="intent_birthDate">birthDate</string>
+    <string name="intent_phone">phone</string>
+    <string name="intent_email">email</string>
+    <string name="intent_details">details</string>
+
+    <!-- Fix issue when using TextInputLayout -->
+    <item name="visible" type="id" />
+    <item name="masked" type="id" />
+</resources>
