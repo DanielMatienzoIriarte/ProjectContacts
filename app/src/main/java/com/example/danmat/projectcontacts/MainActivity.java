@@ -1,5 +1,6 @@
 package com.example.danmat.projectcontacts;
 
+import android.app.DatePickerDialog;
 import android.content.Intent;
 import android.support.design.widget.TextInputLayout;
 import android.support.v7.app.AppCompatActivity;
@@ -10,9 +11,11 @@ import android.widget.DatePicker;
 
 import java.util.Calendar;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity implements View.OnClickListener {
     DatePicker datePicker;
     Calendar calendar;
+    int calDay, calMonth, calYear;
+    TextInputLayout textViewBirthDate;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -20,7 +23,8 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         TextInputLayout textViewFullName = (TextInputLayout) findViewById(R.id.form_textInput_fullName);
-        TextInputLayout textViewBirthDate = (TextInputLayout) findViewById(R.id.form_textInput_birthDate);
+        textViewBirthDate = (TextInputLayout) findViewById(R.id.form_textInput_birthDate);
+        textViewBirthDate.setOnClickListener(this);
         TextInputLayout textViewPhone = (TextInputLayout) findViewById(R.id.form_textInput_phone);
         TextInputLayout textViewEmail = (TextInputLayout) findViewById(R.id.form_textInput_email);
         TextInputLayout textViewDetails = (TextInputLayout) findViewById(R.id.form_textInput_contactDesc);
@@ -84,5 +88,23 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+    }
+
+    @Override
+    public void onClick(View v) {
+        if (v == textViewBirthDate) {
+            calDay = calendar.get(Calendar.DAY_OF_MONTH);
+            calMonth = calendar.get(Calendar.MONTH);
+            calYear = calendar.get(Calendar.YEAR);
+
+            DatePickerDialog datePickerDialog = new DatePickerDialog(this, new DatePickerDialog.OnDateSetListener() {
+
+                @Override
+                public void onDateSet(DatePicker datePicker, int year, int monthOfYear, int dayOfMonth) {
+                    textViewBirthDate.getEditText().setText(dayOfMonth + "/" + monthOfYear + "/" + year);
+                }
+            }, calDay, calMonth, calYear);
+            datePickerDialog.show();
+        }
     }
 }
